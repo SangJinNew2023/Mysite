@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Answer modify -->
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+        <!-- errorr indicator -->
+        {% include "form_errors.html" %}
+        <div class="mb-3">
+            <label for="content" class="form-label">Content</label>
+            <textarea class="form-control" name="content" id="content" rows="10">{{ form.content.value|default_if_none:'' }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <!-- mysitev1 CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>Title</title>
+</head>
+<body>
+<!-- navbar -->
+{% include "navbar.html" %}
+<!-- Start content in basic template -->
+{% block content %}
+{% endblock %}
+<!-- End content in basic template -->
+<!-- Bootstrap JS -->
+<script src="{% static 'bootstrap.min.js' %}"></script>
+<!-- javascript Start -->
+{% block script %}
+{% endblock %}
+<!-- javascript End -->
+</body>
+</html>
