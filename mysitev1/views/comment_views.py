@@ -13,10 +13,10 @@ def comment_create_answer(request, answer_id):
         if form.is_valid():
             comment = form.save(commit=False)
             comment.author = request.user
-            comment.create_at = timezone.now()
+            comment.create_date = timezone.now()
             comment.answer = answer
             comment.save()
-            return redirect('mysitev1:detail', question_id = answer.question.id)
+            return redirect('mysitev1:detail', question_id = comment.answer.question.id)
     else:
         form = CommentForm()
     context = {'form': form}
@@ -45,6 +45,7 @@ def comment_delete_answer(request, comment_id):
     comment = get_object_or_404(Comment, pk=comment_id)
     if request.user != comment.author:
         messages.error(request, '"You do not have permission to delete."')
+        return redirect('mysitev1:detail', question_id=comment.answer.qeustion.id)
     else:
         comment.delete()
     return redirect('mysitev1:detail', question_id=comment.answer.question.id)

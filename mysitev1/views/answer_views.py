@@ -37,11 +37,10 @@ def answer_modify(request, answer_id):
             answer.modify_date = timezone.now()
             answer.save()
             return redirect('{}#answer_{}'.format(resolve_url('mysitev1:detail', question_id=answer.question.id), answer.id))
-
     else:
         form = AnswerForm(instance=answer)
     context = {'answer': answer, 'form': form}
-    return render(request, 'mysitev1/question_form.html', context)
+    return render(request, 'mysitev1/answer_form.html', context)
 
 @login_required(login_url='common:login')
 def answer_delete(request, answer_id):

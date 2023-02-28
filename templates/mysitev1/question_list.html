@@ -33,7 +33,7 @@
                 {{ question_list.paginator.count|sub:question_list.start_index|sub:forloop.counter0|add:1 }}
             </td>
             <td class="text-start">
-                <a href="{% url 'mysitev1:detail' question.id %}">{{ question.subject }}</a>
+                <a href="{% url 'mysitev1:detail' question.id %}" style="text-decoration: none;color:black;">{{ question.subject }}</a>
                 {% if question.answer_set.count > 0 %}
                 <span class="text-danger small mx-2">{{ question.answer_set.count }}</span>
                 {% endif %}
