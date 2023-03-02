@@ -195,5 +195,9 @@ LOGGING = {
             'level': 'INFO',
             'propagate': False,
         },
+        'mysitev1': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+        },
     }
 }

@@ -1,11 +1,13 @@
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
+from logging
+logger = logging.getLoger('mysitev1')
 
 from ..models import Question, Answer
 
 def index(request):
-    3/0 #create error
+    logger.info("Show with the INFO level")
     page = request.GET.get('page', '1')
     kw = request.GET.get('kw', '')
     question_list = Question.objects.order_by('-create_date')
