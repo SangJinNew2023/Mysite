@@ -5,6 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from ..models import Question, Answer
 
 def index(request):
+    3/0 #create error
     page = request.GET.get('page', '1')
     kw = request.GET.get('kw', '')
     question_list = Question.objects.order_by('-create_date')
