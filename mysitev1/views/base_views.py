@@ -1,8 +1,9 @@
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
-from logging
-logger = logging.getLoger('mysitev1')
+import logging
+
+logger = logging.getLogger('mysitev1')
 
 from ..models import Question, Answer
 
