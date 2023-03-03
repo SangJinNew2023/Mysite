@@ -14,3 +14,8 @@
     </form>
 </div>
 {% endblock %}
+{% block script %}
+<script>
+    var simplemde = new SimpleMDE({ element : document.getElementById("content") });
+</script>
+{% endblock %}
